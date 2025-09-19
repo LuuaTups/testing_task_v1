@@ -1,7 +1,14 @@
 # Pytest – mini-kursus (A–C)
 
-See projekt on mõeldud õpilastele, et harjutada **testide kirjutamist** `pytest` abil.
-Fookus: kirjuta teste, et leida vigane kood. Funktsioonid on juba valmis (mõned on tahtlikult vigased).
+See projekt on mõeldud, et harjutada testide kirjutamist `pytest` abil.
+
+## Eeltingimused ja allalaadimine
+1) Laadi projekt alla ja ava kaust `pytest-kursus`
+2) (Soovitus) Loo virtuaalkeskkond
+   - Windows: `python -m venv .venv` siis `venv\\Scripts\\activate`
+   - macOS/Linux: `python3 -m venv .venv && source .venv/bin/activate`
+3) Paigalda pytest: `pip install pytest`
+4) Kontrolli, et pytest töötab: `python -m pytest -q`
 
 ## Kuidas käivitada testid
 1) Ava terminal projektikaustas `pytest-kursus`
@@ -23,4 +30,3 @@ Fookus: kirjuta teste, et leida vigane kood. Funktsioonid on juba valmis (mõned
 - B (b_collections_io.py): kogud ja failisüsteem (listid, sõnastikud, failid)  
 - C (c_module.py): väike moodul klassi ja keerukamate servajuhtudega
 
-Kõik on eesti keeles ja minimalistlik. Edu!
