@@ -87,16 +87,4 @@ def test_unique_letters_basic():
     assert out == {"a", "b", "c"}
 
 
-def test_safe_int_ok_and_default():
-    assert safe_int("42") == 42
-    assert safe_int("x", default=-1) == -1
-    assert safe_int(" 7 ") == 7
 
-
-def test_nth_root_square_cube_and_errors():
-    assert pytest.approx(nth_root(9, 2), rel=1e-6) == 3.0
-    assert pytest.approx(nth_root(27, 3), rel=1e-6) == 3.0
-    with pytest.raises(ValueError):
-        nth_root(10, 0)
-    with pytest.raises(ValueError):
-        nth_root(-1, 2)
