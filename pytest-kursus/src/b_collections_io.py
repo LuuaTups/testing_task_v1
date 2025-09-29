@@ -5,6 +5,7 @@ def unique_sorted(nums):
     """Tagasta kasvavas järjekorras unikaalsed arvud."""
     return sorted(set(nums))
 
+
 def count_words(text):
     """Tagasta sõnade (split vastavalt whitespace) sageduste sõnastik."""
     words = text.lower().split()

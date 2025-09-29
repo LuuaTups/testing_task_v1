@@ -59,57 +59,64 @@
 
     <section class="card">
       <h2>A. Funktsionaalsed alustõed (a_basics.py)</h2>
-      <p>Üldine juhend: vaata funktsioone ja kirjuta teste, et kontrollida nende õigsust. 
-      Mõned funktsioonid võivad olla vigased - sinu testid peaksid need leidma!</p>
+      <p>Üldine juhend: vaata funktsioone ja kirjuta teste, et kontrollida nende õigsust. Mõned funktsioonid võivad olla vigased!</p>
+      <h3>Proovi funktsioone siin:</h3>
+      <div class="interactive-demo">
+        <div class="function-test">
+          <h4>abs_val(-5)</h4>
+          <button onclick="testAbsVal()">Testi</button>
+          <div id="abs_val-result" class="result"></div>
+        </div>
+        <div class="function-test">
+          <h4>max3(3,7,5)</h4>
+          <button onclick="testMax3()">Testi</button>
+          <div id="max3-result" class="result"></div>
+        </div>
+        <div class="function-test">
+          <h4>repeat("hi", 3)</h4>
+          <button onclick="testRepeat()">Testi</button>
+          <div id="repeat-result" class="result"></div>
+        </div>
+        <div class="function-test">
+          <h4>first_last("hello")</h4>
+          <button onclick="testFirstLast()">Testi</button>
+          <div id="first_last-result" class="result"></div>
+        </div>
+      </div>
       <h3>Näide testist</h3>
-      <pre><code># Näide (liitmise test)
-def test_add_basic():
-    assert add(2, 3) == 5
-    assert add(0, 0) == 0
-    assert add(-1, 1) == 0
+      <pre><code># Näide (abs test)
+def test_abs_val_basic():
+    assert abs_val(-5) == 5
+    assert abs_val(0) == 0
 </code></pre>
     </section>
 
     <section class="card">
       <h2>B. Kogud ja failid (b_collections_io.py)</h2>
-      <p>Üldine juhend: vaata funktsioone, mis töötlevad loendeid ja sõnastikke. Kirjuta teste, 
-      et kontrollida nende õigsust. Mõned funktsioonid võivad olla vigased!</p>
-      
+      <p>Üldine juhend: vaata funktsioone, mis töötlevad loendeid ja sõnastikke. Kirjuta teste, et kontrollida nende õigsust. Mõned funktsioonid võivad olla vigased!</p>
       <h3>Proovi funktsioone siin:</h3>
       <div class="interactive-demo">
         <div class="function-test">
-          <h4>unique_sorted([3,1,2,2,3])</h4>
-          <button onclick="testUniqueSorted()">Testi</button>
-          <div id="unique-sorted-result" class="result"></div>
+          <h4>sum_unique([1,2,2,3])</h4>
+          <button onclick="testSumUnique()">Testi</button>
+          <div id="sum-unique-result" class="result"></div>
         </div>
-        
         <div class="function-test">
-          <h4>count_words("Tere tere TERE")</h4>
-          <button onclick="testCountWords()">Testi</button>
-          <div id="count-words-result" class="result"></div>
+          <h4>dict_invert({"a":1,"b":2})</h4>
+          <button onclick="testDictInvert()">Testi</button>
+          <div id="dict-invert-result" class="result"></div>
         </div>
-        
         <div class="function-test">
-          <h4>merge_dicts({"a":1, "b":2}, {"b":9, "c":3})</h4>
-          <button onclick="testMergeDicts()">Testi</button>
-          <div id="merge-dicts-result" class="result"></div>
+          <h4>frequencies([1,2,2,3,3,3])</h4>
+          <button onclick="testFrequencies()">Testi</button>
+          <div id="frequencies-result" class="result"></div>
         </div>
       </div>
-      
-      <h3>Näide testist</h3>
-      <pre><code># Näide (unikaalsete arvude test)
-def test_unique_sorted_basic():
-    assert unique_sorted([3,1,2,2,3]) == [1,2,3]
-    assert unique_sorted([]) == []
-    assert unique_sorted([5,5,5]) == [5]
-</code></pre>
     </section>
 
     <section class="card">
       <h2>C. Moodul + klass + servajuhtumid (c_module.py)</h2>
-      <p>Üldine juhend: vaata klassi ja funktsioone, mis hoiavad invariante (nt saldo ei tohi minna alla nulli). 
-      Kirjuta teste, et kontrollida nende õigsust ja servajuhtumeid.</p>
-      
+      <p>Üldine juhend: vaata klassi ja funktsioone, mis hoiavad invariante. Kirjuta teste, et kontrollida nende õigsust ja servajuhtumeid.</p>
       <h3>Proovi funktsioone siin:</h3>
       <div class="interactive-demo">
         <div class="function-test">
@@ -117,192 +124,105 @@ def test_unique_sorted_basic():
           <button onclick="testFibonacci()">Testi</button>
           <div id="fibonacci-result" class="result"></div>
         </div>
-        
-        <div class="function-test">
-          <h4>prime_factors(12)</h4>
-          <button onclick="testPrimeFactors()">Testi</button>
-          <div id="prime-factors-result" class="result"></div>
-        </div>
-        
-        <div class="function-test">
-          <h4>moving_average([1,2,3,4], 2)</h4>
-          <button onclick="testMovingAverage()">Testi</button>
-          <div id="moving-average-result" class="result"></div>
-        </div>
-        
-        <div class="function-test">
-          <h4>BankAccount konto test</h4>
-          <button onclick="testBankAccount()">Testi</button>
-          <div id="bank-account-result" class="result"></div>
-        </div>
       </div>
-      
-      <h3>Näide testist</h3>
-      <pre><code># Näide (konto test)
-def test_account_withdraw_overdraft():
-    acc = BankAccount("Jaan", 10)
-    with pytest.raises(ValueError):
-        acc.withdraw(11)  # Ei tohi lubada üle võtta
-</code></pre>
-    </section>
-
-    <section class="card">
-      <h2>Tulemus</h2>
-      <p>Kui testid kukuvad <span class="warn">FAIL</span>, siis oled leidnud vea funktsioonis! Kui testid lähevad läbi <span class="ok">PASS</span>, 
-      siis funktsioon on õige. Mõned funktsioonid on tahtlikult vigased - sinu ülesanne on need leida testidega.</p>
     </section>
   </main>
 
   <script>
-    // B-OSA FUNKTSIOONID (mõned vigased)
-    
-    function unique_sorted(nums) {
-      return nums.filter((value, index, self) => self.indexOf(value) === index).sort((a, b) => a - b);
-    }
-    
-    function count_words(text) {
-      const words = text.toLowerCase().split(/\s+/);
-      const result = {};
-      for (const word of words) {
-        if (word) {
-          result[word] = (result[word] || 0) + 1;
-        }
-      }
-      return result;
-    }
-    
-    function merge_dicts(d1, d2) {
-      return { ...d1, ...d2 };
-    }
-    
-    // C-OSA FUNKTSIOONID (mõned vigased)
-    
-    function fibonacci(n) {
-      if (n < 0) throw new Error("Negatiivse arvu Fibonacci ei ole defineeritud");
-      if (n === 0) return 0;
-      if (n === 1) return 1;
-      return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-    
-    function prime_factors(n) {
-      if (n < 2) throw new Error("Algtegurid on defineeritud ainult arvude >= 2 jaoks");
-      const factors = [];
-      let d = 2;
-      while (d * d <= n) {
-        while (n % d === 0) {
-          factors.push(d);
-          n /= d;
-        }
-        d++;
-      }
-      if (n > 1) factors.push(n);
-      return factors;
-    }
-    
-    function moving_average(values, window) {
-      if (window <= 0) throw new Error("Aken peab olema positiivne");
-      if (values.length < window) {
-        return [];
-      }
-      const result = [];
-      for (let i = 0; i <= values.length - window; i++) {
-        const avg = values.slice(i, i + window).reduce((a, b) => a + b, 0) / window;
-        result.push(avg);
-      }
-      return result;
-    }
-    
-    // TESTID
-    
     function showResult(elementId, isPass, message) {
       const element = document.getElementById(elementId);
       element.className = `result ${isPass ? 'pass' : 'fail'}`;
       element.textContent = message;
     }
-    
-    function testUniqueSorted() {
-      try {
-        const result = unique_sorted([3,1,2,2,3]);
-        const expected = [1,2,3];
-        const isCorrect = JSON.stringify(result) === JSON.stringify(expected);
-        showResult('unique-sorted-result', isCorrect, 
-          `Tulemus: [${result.join(',')}] | Oodatud: [${expected.join(',')}] | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('unique-sorted-result', false, `VIGA: ${error.message}`);
-      }
+
+    function approxEqual(a, b, tol=1e-6) {
+      return Math.abs(a-b) < tol;
     }
-    
-    function testCountWords() {
-      try {
-        const result = count_words("Tere tere TERE");
-        const expected = {"tere": 3};
-        const isCorrect = JSON.stringify(result) === JSON.stringify(expected);
-        showResult('count-words-result', isCorrect, 
-          `Tulemus: ${JSON.stringify(result)} | Oodatud: ${JSON.stringify(expected)} | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('count-words-result', false, `VIGA: ${error.message}`);
-      }
+
+    function abs_val(x) {
+      return Math.abs(x);
     }
-    
-    function testMergeDicts() {
-      try {
-        const result = merge_dicts({"a":1, "b":2}, {"b":9, "c":3});
-        const expected = {"a":1, "b":9, "c":3};
-        const isCorrect = JSON.stringify(result) === JSON.stringify(expected);
-        showResult('merge-dicts-result', isCorrect, 
-          `Tulemus: ${JSON.stringify(result)} | Oodatud: ${JSON.stringify(expected)} | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('merge-dicts-result', false, `VIGA: ${error.message}`);
-      }
+    function max3(a,b,c) {
+      return Math.max(a,b,c);
     }
-    
+    function repeat(s,n) {
+      return s.repeat(n);
+    }
+    function first_last(s) {
+      return s ? {first: s[0], last: s[s.length-1]} : {first:null, last:null};
+    }
+    function sum_unique(nums) {
+      return [...new Set(nums)].reduce((a,b)=>a+b,0);
+    }
+    function dict_invert(d) {
+      const res = {};
+      for (const k in d) res[d[k]] = k;
+      return res;
+    }
+    function frequencies(nums) {
+      const res = {};
+      for (const x of nums) res[x] = (res[x]||0)+1;
+      return res;
+    }
+
+    function testAbsVal() {
+      const result = abs_val(-5);
+      const expected = 5;
+      const more = abs_val(0)===0 && abs_val(10)===10;
+      showResult('abs_val-result', result===expected && more, 
+        `Tulemus: ${result} | Oodatud: ${expected} | ${result===expected && more ? 'PASS' : 'FAIL'}`);
+    }
+    function testMax3() {
+      const result = max3(3,7,5);
+      const expected = 7;
+      showResult('max3-result', result===expected, 
+        `Tulemus: ${result} | Oodatud: ${expected} | ${result===expected ? 'PASS' : 'FAIL'}`);
+    }
+    function testRepeat() {
+      const result = repeat("hi",3);
+      const expected = "hihihi";
+      showResult('repeat-result', result===expected, 
+        `Tulemus: ${result} | Oodatud: ${expected} | ${result===expected ? 'PASS' : 'FAIL'}`);
+    }
+    function testFirstLast() {
+      const result = first_last("hello");
+      const expected = {first:"h", last:"o"};
+      const isCorrect = result.first===expected.first && result.last===expected.last;
+      showResult('first_last-result', isCorrect, 
+        `Tulemus: {first:${result.first}, last:${result.last}} | Oodatud: {first:${expected.first}, last:${expected.last}} | ${isCorrect ? 'PASS' : 'FAIL'}`);
+    }
+    function testSumUnique() {
+      const result = sum_unique([1,2,2,3]);
+      const expected = 6;
+      showResult('sum-unique-result', result===expected, 
+        `Tulemus: ${result} | Oodatud: ${expected} | ${result===expected ? 'PASS' : 'FAIL'}`);
+    }
+    function testDictInvert() {
+      const result = dict_invert({"a":1,"b":2});
+      const expected = {1:"a",2:"b"};
+      const isCorrect = JSON.stringify(result)===JSON.stringify(expected);
+      showResult('dict-invert-result', isCorrect,
+        `Tulemus: ${JSON.stringify(result)} | Oodatud: ${JSON.stringify(expected)} | ${isCorrect ? 'PASS' : 'FAIL'}`);
+    }
+    function testFrequencies() {
+      const result = frequencies([1,2,2,3,3,3]);
+      const expected = {1:1,2:2,3:3};
+      const isCorrect = JSON.stringify(result)===JSON.stringify(expected);
+      showResult('frequencies-result', isCorrect,
+        `Tulemus: ${JSON.stringify(result)} | Oodatud: ${JSON.stringify(expected)} | ${isCorrect ? 'PASS' : 'FAIL'}`);
+    }
+
+    function fibonacci(n) {
+      if (n<0) throw new Error("Negatiivne");
+      if(n===0) return 0;
+      if(n===1) return 1;
+      return fibonacci(n-1)+fibonacci(n-2);
+    }
     function testFibonacci() {
-      try {
-        const result = fibonacci(10);
-        const expected = 55;
-        const isCorrect = result === expected;
-        showResult('fibonacci-result', isCorrect, 
-          `Tulemus: ${result} | Oodatud: ${expected} | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('fibonacci-result', false, `VIGA: ${error.message}`);
-      }
-    }
-    
-    function testPrimeFactors() {
-      try {
-        const result = prime_factors(12);
-        const expected = [2,2,3];
-        const isCorrect = JSON.stringify(result) === JSON.stringify(expected);
-        showResult('prime-factors-result', isCorrect, 
-          `Tulemus: [${result.join(',')}] | Oodatud: [${expected.join(',')}] | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('prime-factors-result', false, `VIGA: ${error.message}`);
-      }
-    }
-    
-    function testMovingAverage() {
-      try {
-        const result = moving_average([1,2,3,4], 2);
-        const expected = [1.5, 2.5, 3.5];
-        const isCorrect = JSON.stringify(result) === JSON.stringify(expected);
-        showResult('moving-average-result', isCorrect, 
-          `Tulemus: [${result.join(',')}] | Oodatud: [${expected.join(',')}] | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('moving-average-result', false, `VIGA: ${error.message}`);
-      }
-    }
-    
-    function testBankAccount() {
-      try {
-        // Lihtne konto test
-        const acc = { balance: 10 };
-        const canWithdraw = acc.balance >= 11;
-        const isCorrect = !canWithdraw; // Ei tohi lubada üle võtta
-        showResult('bank-account-result', isCorrect, 
-          `Saldo: ${acc.balance} | Üle võtmine 11: ${canWithdraw ? 'LUBATUD' : 'KEELATUD'} | ${isCorrect ? 'PASS' : 'FAIL'}`);
-      } catch (error) {
-        showResult('bank-account-result', false, `VIGA: ${error.message}`);
-      }
+      const result = fibonacci(10);
+      const expected = 55;
+      showResult('fibonacci-result', result===expected, 
+        `Tulemus: ${result} | Oodatud: ${expected} | ${result===expected ? 'PASS' : 'FAIL'}`);
     }
   </script>
 </body>
